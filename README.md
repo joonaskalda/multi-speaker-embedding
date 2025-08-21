@@ -5,12 +5,9 @@ Interspeech 2025
 
 > Reliable speaker embeddings are critical for multi-speaker speech processing tasks. Traditionally models are trained on single-speaker utterances and suffer from domain mismatch when applied in multi-speaker contexts. Recently proposed guided speaker embeddings (GSE) were shown to improve this by training on synthetic multi-speaker mixtures guided by oracle speaker activity labels. Additionally modeling all speakers present in a chunk is desirable but the performance of such methods has been sub-par up to now. We build on GSE by modeling multiple speakers together and using diarization features for guiding. We also propose a new validation metric for embeddings in multi-speaker context and demonstrate its effectiveness. Results on multiple speaker diarization datasets demonstrate that we improve on speed and performance while reducing the embedding model size.
 
-<img src="./joint_model.png" alt="joint_model" width="800" />
-
-
 ## Training
 
-To set up the diarization datasets using pyannote-database, follow the instructions [here](https://github.com/FrenchKrab/datasets-pyannote). To setup VoxCeleb, follow the instructions [here](https://github.com/pyannote/pyannote-db-voxceleb). For the exact configurations of the paper, you will also need the room background noise from (MUSAN)[https://www.openslr.org/17/] and the simulated room impulse responses from (RIR)[https://www.openslr.org/17/].
+To set up the diarization datasets using pyannote-database, follow the instructions [here](https://github.com/FrenchKrab/datasets-pyannote). To setup VoxCeleb, follow the instructions [here](https://github.com/pyannote/pyannote-db-voxceleb). For the exact configurations of the paper, you will also need the room background noise from [MUSAN](https://www.openslr.org/17/) and the simulated room impulse responses from [RIR](https://www.openslr.org/17/).
 
 ### Training the segmentation model
 
@@ -56,7 +53,6 @@ model = Model.from_pretrained(MODEL_PATH).to(device).eval()
 pipeline = SpeakerDiarizationV2(
     model=model,
     batch_size=128,
-    constrained_assignment=True,
 ).to(device)
 
 # hyperparameters should be optimized on validation set
