@@ -7,7 +7,7 @@ Interspeech 2025
 
 ## Training
 
-To set up the diarization datasets using pyannote-database, follow the instructions [here](https://github.com/FrenchKrab/datasets-pyannote). To setup VoxCeleb, follow the instructions [here](https://github.com/pyannote/pyannote-db-voxceleb). For the exact configurations of the paper, you will also need the room background noise from [MUSAN](https://www.openslr.org/17/) and the simulated room impulse responses from [RIR](https://www.openslr.org/17/).
+To set up the diarization datasets using pyannote-database, follow the instructions [here](https://github.com/FrenchKrab/datasets-pyannote). To setup VoxCeleb, follow the instructions [here](https://github.com/pyannote/pyannote-db-voxceleb). For the exact configurations of the paper, you will also need the room background noise from [MUSAN](https://www.openslr.org/17/) and the simulated room impulse responses from [RIR](http://www.openslr.org/26/).
 
 ### Training the segmentation model
 
